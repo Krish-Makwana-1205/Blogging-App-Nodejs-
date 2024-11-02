@@ -52,10 +52,8 @@ userSchema.static('matchpassword', async function(email, password){
     const user = await this.findOne({email:email});
     console.log(user);
     if(!user){
-        console.log("Run");
         throw new Error("User does not exist");
     }
-    console.log("aaaa");
     const salt = user.salt;
     const hash = user.password;
 
