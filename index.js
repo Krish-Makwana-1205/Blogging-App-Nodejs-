@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 8000;
 const userroute = require("./routes/user");
+const cookieparser = require("cookie-parser");
+
+
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
 app.use(express.urlencoded({extended:false}));

@@ -16,11 +16,11 @@ router.post("/signin",async (req, res)=>{
     try{
     const token = await user.matchpassword(email, password);
     console.log(token);
-    res.redirect("/");
+    res.cookie("token", token).redirect("/");
 }
     catch(error){
         return res.render('signin', {
-            error: "Incorrect password",
+            error: "Incorrect password or email",
         })
     }
     
